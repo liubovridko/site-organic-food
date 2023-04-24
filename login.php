@@ -67,7 +67,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/nav.php");
 <div class="bform py-5">
  <!-- Row -->
 	 <div class="row">
-		 <div class="container">
+		 <div class="container" style="display: flex;">
 			 <div class="col-lg-6 align-justify-center pr-4 pl-0 contact-form">
 				 <div class="">
 				 <h2 class="mb-3 font-weight-light">Please, Login </h2>
@@ -111,9 +111,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/nav.php");
 							 </div>
 						 </div>
 					 </div>
+					 <div class="col-lg-6  pl-3" style="background-image:url(assets/images/image_4.jpg); width: 100%; height: 100%; background-position: center;"></div>
 				 </div>
-			 <div class="col-lg-6 right-image pl-3" style="background-image:url(assets/images/image_4.jpg);">
-		 </div>
+			 
 	 </div>
 </div>
 
