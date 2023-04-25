@@ -126,10 +126,10 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/nav.php");
           					</div>
 
   						 </div>
-         </div>
+        
 
-        <div class="col-lg-6  pl-3" style="background-image:url(assets/images/image_5.jpg); width: 100%; height: 100%; background-size: cover no-repeat;"></div>
-
+        <div class="col-lg-6  pl-3" style="background-image:url(assets/images/image_5.jpg); width: 100%; height: 100%; "></div>
+      </div>
         
      </div>
   	</div>

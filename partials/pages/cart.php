@@ -55,7 +55,7 @@ if (isset($_GET['remove']) && is_numeric($_GET['remove']) && isset($_SESSION['ca
                            
                                  <?php 
                                  $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
-                                 $count=count(array_keys($_SESSION["cart"]));
+                                 $count=isset($_SESSION['cart']) ? count(array_keys($_SESSION["cart"])) : 0 ;
                           if(!empty($products_in_cart))  {    
                            $sql="SELECT * FROM products WHERE id IN ("; 
                            foreach($_SESSION['cart'] as $id => $value) { 
