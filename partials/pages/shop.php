@@ -14,49 +14,28 @@
     		<div class="row justify-content-center">
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
-    					<li><a href="?page=shop&category=product-all" 
-                             <?php if(!isset($_GET['category']) || $_GET['category'] == 'product-all') : ?>  class="active" <?php endif; ?> >All</a></li>
-              <li><a href="?page=shop&category=product-sort&id=1" 
-                            <?php if(isset($_GET['id']) && intval($_GET['id']) == 1): ?> class="active" <?php endif; ?> >Vegetables</a></li>
-              <li><a href="?page=shop&category=product-sort&id=2"
-                            <?php if(isset($_GET['id']) && intval($_GET['id']) == 2): ?> class="active" <?php endif; ?>>Fruits</a></li>
-              <li><a href="?page=shop&category=product-sort&id=3"
-                            <?php if(isset($_GET['id']) && intval($_GET['id']) == 3): ?> class="active" <?php endif; ?>>Juice</a></li>
-              <li><a href="?page=shop&category=product-sort&id=4"
-                            <?php if(isset($_GET['id']) && intval($_GET['id']) == 4): ?> class="active" <?php endif; ?>>Dried</a></li>
+    					
+
+              <li class="product-category-item"><a href="#" class="category-link active" data-id="">All</a></li>
+              <li class="product-category-item"><a href="#" class="category-link" data-id="1" >Vegetables</a></li>
+              <li class="product-category-item"><a href="#" class="category-link" data-id="2" >Fruits</a></li>
+              <li class="product-category-item"><a href="#" class="category-link" data-id="3" >Juice</a></li>
+              <li class="product-category-item"><a href="#" class="category-link" data-id="4" >Dried</a></li>
     				</ul>
     			</div>
     		</div>
-    		<div class="row">
-    			
-
-<?php 
-$page='product-all';
-  if(isset($_GET['category'])) {
- switch ($_GET['category']) {
-    case 'product-sort':
-        $page='product-sort';
-        break;       
-    default:
-        $page='product-all';
-        break;
- }
-}
-   require($_SERVER['DOCUMENT_ROOT'] . "/partials/products/" . $page . ".php");
- ?>
+    		<div class="row" id="product-list">
 
     		</div>
     		<div class="row mt-5">
           <div class="col text-center">
-            <div class="block-27">
+            <div class="block-27" id="pagination">
               <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
+                <li><a href="#" id="prevPage">&lt;</a></li>
+                <li class="active" ><a href="#" data-page="1">1</a></li>
+                <li><a href="#" data-page="2">2</a></li>
+                <li><a href="#" data-page="3">3</a></li>
+                <li><a href="#" id="nextPage">&gt;</a></li>
               </ul>
             </div>
           </div>

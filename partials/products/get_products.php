@@ -1,32 +1,29 @@
 <?php
  require($_SERVER['DOCUMENT_ROOT'] ."/configs/bd.php"); 
- require ($_SERVER['DOCUMENT_ROOT'] . '/configs/helpers.php');
+ 
 
-?>
+// Получение номера запрошенной страницы
+if (isset($_POST['page'])) {
+  $page = intval($_POST['page']);
+} else {
+  $page = 1;
+}
 
-<?php
-        //$id=intval($_GET['id']);
-        // Обработка POST-запроса с категорией товаров
-        if (isset($_POST['id'])) {
-            $id = $_POST['id'];
-        } else {
-            $id = ""; // Если категория не задана, то выбираем все товары
-        }
+// Вычисление количества товаров и страниц
+$itemsPerPage = 10; // Количество товаров на одной странице
+$totalItems = 12; // Всего товаров в базе данных
+$totalPages = ceil($totalItems / $itemsPerPage);
 
-        // Получение списка товаров для заданной категории или всех товаров
-        $sql = "SELECT * FROM products";
-        if ($id != "") {
-            $sql .= " WHERE category_id  = '$id'";
-        }
-        $result = $conn->query($sql);
+// Определение диапазона индексов товаров для выбранной страницы
+$startIndex = ($page - 1) * $itemsPerPage;
+$endIndex = $startIndex + $itemsPerPage - 1;
 
-        // Формирование списка товаров в виде HTML-кода
-        $html = '';
-        if ($result->num_rows > 0) {
-            
-        
+// Выборка товаров из базы данных
+$sql = "SELECT * FROM products LIMIT $startIndex, $itemsPerPage";
+$result = $conn->query($sql);
 
-        while($product = $result->fetch_assoc()) {
+// Формирование списка товаров в виде HTML-к
+ while($product = $result->fetch_assoc()) {
 
         $image=$product['preview']; 
         $sale=$product['sale'];
@@ -74,15 +71,3 @@
                  // Отправка списка товаров в виде HTML-кода в ответе на запрос
                  echo $html;
                               }
-                } else {
-                    $html = '<p>Товаров нет</p>';
-                }
-
-               
-               
-
-                // Закрытие соединения с базой данных
-               // $conn->close();
-
-
- ?>  			

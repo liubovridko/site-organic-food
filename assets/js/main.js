@@ -630,3 +630,85 @@ function onChange() {
     confirm.setCustomValidity('Passwords do not match');
   }
 }
+
+
+// jQuery-код для обработки кликов на ссылках и отправки AJAX-запроса
+$(document).on('click', '.category-link', function(e) {
+    e.preventDefault(); // отменяем действие по умолчанию при клике на ссылку
+    $('a.category-link').removeClass('active'); // Удаляем класс active у всех ссылок категорий
+        $(this).addClass('active'); // Добавляем класс active к ссылке, по которой кликнули
+
+    var id = $(this).data('id'); // получаем значение атрибута data-id
+    /*console.dir($(this).data('id'));*/
+     that=$(this);
+    $.ajax({
+        url: '/partials/products/product-sort.php', // адрес скрипта, который будет возвращать список товаров для заданной категории
+        data: { id: id },
+        type: 'POST',
+        dataType: 'html',
+        success: function(response) {
+        	
+            
+            $('#product-list').html(response); // заменяем содержимое контейнера с товарами на полученный список
+        }
+    });
+});
+
+
+$(document).ready(function() {
+  // Задаем начальные параметры пагинации
+  var currentPage = 1;
+  var totalPages = 3; // В данном примере всего 3 страницы
+
+  // Обработчик кликов на ссылки пагинации
+  $('#pagination').on('click', 'a', function(e) {
+    e.preventDefault();
+    var nextPage = $(this).data('page');
+  //если клик был по ссылке "Предыдущая страница" или "Следующая страница", то класс active не добавляется
+    if ($(this).attr('id') != 'prevPage' && $(this).attr('id') != 'nextPage') {
+    if (nextPage != currentPage) {
+      currentPage = nextPage;
+      getProducts();
+      $('#pagination li').removeClass('active');
+      $(this).parent('li').addClass('active');
+    }
+  }
+  });
+
+  // Обработчик кликов на ссылку "Предыдущая страница"
+  $('#prevPage').on('click', function(e) {
+    e.preventDefault();
+    if (currentPage > 1) {
+      currentPage--;
+      getProducts();
+      $('#pagination li').removeClass('active');
+      $('#pagination li a[data-page=' + currentPage + ']').parent('li').addClass('active');
+    }
+  });
+
+  // Обработчик кликов на ссылку "Следующая страница"
+  $('#nextPage').on('click', function(e) {
+    e.preventDefault();
+    if (currentPage < totalPages) {
+      currentPage++;
+      getProducts();
+      $('#pagination li').removeClass('active');
+      $('#pagination li a[data-page=' + currentPage + ']').parent('li').addClass('active');
+    }
+  });
+
+  // Функция для отправки AJAX-запроса на сервер
+  function getProducts() {
+    $.ajax({
+      type: 'POST',
+      url: '/partials/products/get_products.php',
+      data: { page: currentPage },
+      success: function(data) {
+        $('#product-list').html(data);
+      }
+    });
+  }
+
+  // Загружаем список товаров для первой страницы при загрузке страницы
+  getProducts();
+});
