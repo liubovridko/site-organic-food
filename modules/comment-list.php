@@ -1,6 +1,5 @@
 <?php 
 	/*подключаемся к базе данных*/
-	 require ($_SERVER['DOCUMENT_ROOT'] . '/configs/bd.php');
 
 use Phppot\DataSource;
 require_once __DIR__ . '/DataSource.php';

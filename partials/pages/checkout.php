@@ -27,10 +27,7 @@ if(isLogin()) {
                         $subtotal=$_SESSION['cart'][$row['id']]['quantity'] * $price; 
                         $totalprice+=$subtotal; }
 
-                        $listProducts=json_encode([/*'sum order'=>$totalprice, 'list products' =>*/$_SESSION['cart'] ]);
-                        echo '<pre>';
-				        print_r( $listProducts);
-				        echo  '</pre>'
+                       
                     ?> 
 
 
@@ -56,13 +53,13 @@ if(isLogin()) {
 	          		<div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="firstname">Firt Name</label>
-	                  <input type="text" name="firstname" class="form-control" placeholder="" value="<?php echo $firstname ? $firstname : '' ;?>">
+	                  <input type="text" name="firstname" class="form-control" placeholder="" value="<?php echo isLogin() ? $firstname : 'Name' ;?>">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="lastname">Last Name</label>
-	                  <input type="text" name="lastname" class="form-control" placeholder="" value="<?php echo $lastname ? $lastname : '' ;?>">
+	                  <input type="text" name="lastname" class="form-control" placeholder="" value="<?php echo isLogin() ? $lastname : 'Lastname' ;?>">
 	                </div>
                 </div>
                 <div class="w-100"></div>
@@ -111,13 +108,13 @@ if(isLogin()) {
 		            <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="phone">Phone</label>
-	                  <input type="text" name="phone" class="form-control" placeholder="" value="<?php echo $phone ? $phone : '' ;?>">
+	                  <input type="text" name="phone" class="form-control" placeholder="" value="<?php echo isLogin() ? $phone : '' ;?>">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="emailaddress">Email Address</label>
-	                  <input type="text" name="emailaddress" class="form-control" placeholder="" value="<?php echo $email ? $email : '' ;?>">
+	                  <input type="text" name="emailaddress" class="form-control" placeholder="" value="<?php echo isLogin() ? $email : '' ;?>">
 	                </div>
                 </div>
                 <div class="w-100"></div>
@@ -128,7 +125,7 @@ if(isLogin()) {
 										  <label><input type="radio" name="optradio"> Ship to different address</label>
 										</div>
 									</div>
-									<input type="text" name="list-products" value="<?php echo $listProducts; ?>" >
+									
                 </div>
 	            </div>
 	        

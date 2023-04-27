@@ -97,7 +97,7 @@ function addToCart($product,$count) : void
  	$_SESSION['cart'][$product['id']]['quantity']+=1;
  } else {
  	$_SESSION['cart'][$product['id']]=[
-
+        "product_id" => $product['id'],
  		"quantity" => $count, 
         "price" => $price,
         "title" => $product['title'],
@@ -140,4 +140,10 @@ function save($table, $data) {
  // выбор 
 	     $sql="INSERT INTO $table ( `name`, `email`, `phone`, `adress`) VALUES ('".$data['firstname']."','".$data['emailaddress']."','". $data['phone']."','". $data['streetaddress']."')";
 	    $conn->query($sql);
+	    $order_id = mysqli_insert_id($conn);
+	         // Проверка успешного выполнения запроса на добавление заказа
+			if (mysqli_affected_rows($conn) == 0) {
+			    die("Error: Order not added.");
+			}
+	    return   $order_id;
 }
