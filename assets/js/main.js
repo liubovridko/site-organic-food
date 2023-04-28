@@ -602,7 +602,7 @@ function showCartQty() {
          	dataType: 'json',
          	success: function(response){
          		if(response.code == 'OK'){
-         			alert('Ви додали товар до кошику');
+         			alert('You have added the product to the cart');
          			showCartQty();
          		} else {
          			alert(response.answer);

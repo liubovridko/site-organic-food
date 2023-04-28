@@ -44,6 +44,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/nav.php");
  	case 'checkout':
  		$page='checkout';
  		break;
+    case 'my-order':
+    $page='my-order';
+    break;
  	case 'about':
  		$page='about';
  		break;

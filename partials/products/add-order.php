@@ -21,10 +21,9 @@ if(!empty($_POST)) {
 	  $sql = "INSERT INTO order_details (order_id, product_id, product_name, quantity, price) VALUES ('$order_id', '$product_id', '$product_name', '$quantity', '$price')";
 	 if(mysqli_query($conn, $sql)){
           $_SESSION["cart"]=null;
-           echo 'Ви успішно оформили замовлення! Номер вашого замовлення: №'.$order_id; 
-            sleep(3);
-			//redirect to main page
-			header("Location: /");
+           
+			//redirect to  page my order
+			header("Location: /?page=my-order&id=". $order_id);
 	     } else {
 
 			  // Checking the successful execution of a request to add a product

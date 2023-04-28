@@ -45,10 +45,10 @@
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="?cart=add&id=<?php echo $row['id'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center"  data-id="<?php echo $row['id'] ?>" data-title="Додати до кошика" >
+	    							<a href="?cart=add&id=<?php echo $row['id'] ?>" class="add-to-cart d-flex justify-content-center align-items-center text-center"  data-id="<?php echo $row['id'] ?>" data-title="Add to cart" >
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
-	    							<a href="/?page=single-product&id=<?php echo $row['id']; ?> " class="buy-now d-flex justify-content-center align-items-center mx-1" data-title="Купити зараз">
+	    							<a href="/?page=single-product&id=<?php echo $row['id']; ?> " class="buy-now d-flex justify-content-center align-items-center mx-1" data-title="Buy-now">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
 	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
