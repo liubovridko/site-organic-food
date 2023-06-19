@@ -19,6 +19,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/nav.php");
     <!-- END nav -->
 	
 <?php
+
 //выводим страницы в зависимости от существования в  адресной строке ?page=home или ?page=photography
   $page='home';
   if(isset($_GET['page'])) {
