@@ -137,7 +137,7 @@ function save($table, $data) {
 
 	 /*обьявляем глобальную переменную*/
 	    global $conn;
- // выбор 
+ // выбор таблицы базы данных
 	     $sql="INSERT INTO $table ( `name`, `email`, `phone`, `adress`) VALUES ('".$data['firstname']."','".$data['emailaddress']."','". $data['phone']."','". $data['streetaddress']."')";
 	    $conn->query($sql);
 	    $order_id = mysqli_insert_id($conn);
