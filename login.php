@@ -47,7 +47,7 @@ require($_SERVER['DOCUMENT_ROOT'] ."/partials/header.php");
 		          $_SESSION["user_id"] = null;
 		          //удаляем куки
 		            setcookie("user_id", '',0,"/");
-		            echo "<script> alert('Неправильно введені дані')</script>";
+		            echo "<script> alert('Неправильно введені дані. Введіть заново')</script>";
 		         }
           
       }
