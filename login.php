@@ -47,7 +47,7 @@ require($_SERVER['DOCUMENT_ROOT'] ."/partials/header.php");
 		          $_SESSION["user_id"] = null;
 		          //удаляем куки
 		            setcookie("user_id", '',0,"/");
-		            echo "<script> alert('Неправильно введені дані. Введіть заново')</script>";
+		            echo "<script> alert('Неправильно введені дані. Введіть знову')</script>";
 		         }
           
       }
@@ -90,7 +90,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/nav.php");
 	                           <input type="checkbox" name="remember" value="1">Remember Me
 	                          </div>
 								 <div class="col-lg-12">
-								 <button type="submit" class="btn btn-primary btn-md btn-block  " name="submit" ><span> Login</span></button>
+								 <button type="submit" class="btn btn-primary btn-md btn-block " name="submit" ><span> Login</span></button>
 								 <!-- -->
 							 </div>
 						 </div>

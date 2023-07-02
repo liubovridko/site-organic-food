@@ -16,7 +16,7 @@ require($_SERVER['DOCUMENT_ROOT'] ."/partials/header.php");
     //если запрос к базе данных успешный
       if (mysqli_query($conn, $sql)) {
       	    $_SESSION['user_id'] = $user['id'];
-           echo 'Ви успішно зареєстровані!'; 
+           echo 'Дякуємо!Ви успішно зареєстровані!'; 
             sleep(3);
             //редирект на главную страницу
             header("Location: /");
