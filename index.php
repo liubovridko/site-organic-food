@@ -48,6 +48,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/nav.php");
     case 'my-order':
     $page='my-order';
     break;
+     case 'orders':
+    $page='orders';
+    break;
     case 'orders-list':
     $page='orders-list';
     break;
