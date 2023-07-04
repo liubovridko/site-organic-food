@@ -14,7 +14,10 @@ require($_SERVER['DOCUMENT_ROOT'] ."/partials/header.php");
 
     $sql = "INSERT INTO `users` ( `username`,`last_name`, `email`,`phone`, password) VALUES ('". $_POST['first_name'] ."', '". $_POST['last_name'] ."', '". $_POST['email'] ."', '". $_POST['phone'] ."' , '". password_hash($_POST['password'], PASSWORD_BCRYPT) ."')";
     //если запрос к базе данных успешный
-      if (mysqli_query($conn, $sql)) {
+       $result=mysqli_query($conn, $sql);
+          //выбирает одну запись и помещает ее в массив
+          $user=$result->fetch_assoc();
+      if ($result) {
       	    $_SESSION['user_id'] = $user['id'];
            echo 'Дякуємо!Ви успішно зареєстровані!'; 
             sleep(3);

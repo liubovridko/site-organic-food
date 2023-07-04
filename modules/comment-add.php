@@ -9,7 +9,7 @@
 	 $username = $_POST['username'];
 	 $email = $_POST['email'];
 	 $text = $_POST['message'];
-	  $user=getCurrentUser();
+	 $user=getCurrentUser();
 	 $timeTwit = date("F j, Y, g:i a");
 	 
 

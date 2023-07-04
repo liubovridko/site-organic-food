@@ -20,7 +20,7 @@ if(isset($_COOKIE['user_id'])) {
 	$userResult = $conn->query($userSQL);
 	if($userResult){ //если нашли запись пользователя в базе данных
 	  $user = $userResult->fetch_assoc();
-	  $username = $user['username']; //берем имя пользователя из базі данных
+	  $username = $user['username']; //берем имя пользователя из базе данных
 	}
 
 }	
@@ -28,11 +28,11 @@ if(isset($_COOKIE['user_id'])) {
 ?>
 
 <?php
-if(!empty($_SESSION["cart"])) {
-$cart_count = count(array_keys($_SESSION["cart"]));
-} else {
-	$cart_count= 0;
-}
+	if(!empty($_SESSION["cart"])) {
+	$cart_count = count(array_keys($_SESSION["cart"]));
+	} else {
+		$cart_count= 0;
+	}
 ?>
 
  
@@ -45,8 +45,7 @@ $cart_count = count(array_keys($_SESSION["cart"]));
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
               <!-- проверка активна ли страница ,   если не существует/существует $_GET['page'] или адресная строка стоит home-добавляем класс "active" -->
-	          <li class="nav-item  "
-						>
+	          <li class="nav-item  ">
 	          	<a href="/?page=home" class="nav-link">Home</a>
 	          </li>
 

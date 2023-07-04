@@ -1,7 +1,7 @@
 
 <?php
 
-
+//подключаем базу данных и хедер
    require($_SERVER['DOCUMENT_ROOT'] ."/configs/bd.php");
 
    require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
@@ -12,6 +12,7 @@
 <div class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 
 <?php
+//подключаем навигацию
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/nav.php");
 ?>
 
