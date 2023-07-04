@@ -52,9 +52,9 @@ $result = $conn->query($sql);
 		    <td><?php echo $row['password']; ?></td>
 		    <td>
 		    	<!-- ссылки в кнопках устанавливаем GET параметр -->
-                                            <a href="/admin/modules/users/edit.php?id=<?php echo $row['id']; ?>" class="btn btn-warning"><i class="fas fa-pen"></i> Edit</a>
+                    <a href="/admin/modules/users/edit.php?id=<?php echo $row['id']; ?>" class="btn btn-warning"><i class="fas fa-pen"></i> Edit</a>
 
-                                            <a href="/admin/modules/users/delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a>
+                    <a href="/admin/modules/users/delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a>
 		    </td>
 		  </tr> 
 
