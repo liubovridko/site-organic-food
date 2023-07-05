@@ -48,4 +48,5 @@ $recently_added_products = $conn->query('SELECT * FROM products ORDER BY date_ad
     					</div>
     				</div>
     			</div>
+               <!--  END loop -->
   <?php endforeach; ?>  			

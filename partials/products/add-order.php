@@ -3,6 +3,7 @@ session_start();
 require($_SERVER['DOCUMENT_ROOT'] ."/configs/bd.php"); 
  require ($_SERVER['DOCUMENT_ROOT'] . '/configs/helpers.php');
 
+//if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if(!empty($_POST)) {
 
 	$cart = $_SESSION['cart'];
@@ -12,10 +13,9 @@ if(!empty($_POST)) {
   $order_id=save('orders', $data);
 
   
-  
   // Проверка, был ли выбран чекбокс "Create an Account"
   if (isset($_POST['optradio'])) {
-  	// Получение данных из формы
+  	// Получение данных из формы - checkout
 	  $firstname = $_POST['firstname'];
 	  $lastname = $_POST['lastname'];
 	  $email = $_POST['emailaddress'];
