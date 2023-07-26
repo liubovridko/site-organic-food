@@ -49,6 +49,7 @@
                     <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
                     <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                   
                   </div>
                 </div>
               </div>
@@ -92,7 +93,7 @@
 
             <div class="sidebar-box ftco-animate">
               <h3 class="heading">Paragraph</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
             </div>
           </div>
 
